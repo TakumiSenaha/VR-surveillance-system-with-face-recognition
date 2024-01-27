@@ -1,0 +1,53 @@
+import os
+import cv2
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from facenet_pytorch import MTCNN, InceptionResnetV1
+import pickle
+
+# Define the directory containing the images
+train_dir = 'C:/Users/pg_ma/personal_folders/senaha/Unity/script/faceRecognition/train_dir_demo/'
+miss_count = 0
+# Initialize the MTCNN module
+mtcnn = MTCNN()
+
+# Initialize a pre-trained InceptionResnetV1 model
+resnet = InceptionResnetV1(pretrained='vggface2').eval()
+
+# Prepare the data
+X = []
+y = []
+for person_id in os.listdir(train_dir):
+    person_dir = os.path.join(train_dir, person_id)
+    if os.path.isdir(person_dir):
+        for image_name in os.listdir(person_dir):
+            image_path = os.path.join(person_dir, image_name)
+            img = cv2.imread(image_path)
+            if img is None:
+                print(f"Failed to load image: {image_path}")
+                continue
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            img_cropped = mtcnn(img)
+            if img_cropped is not None:
+                img_embedding = resnet(img_cropped.unsqueeze(0))
+                X.append(img_embedding.detach().numpy().reshape(-1))  # Reshape the embeddings
+                y.append(person_id)
+            else:
+                print(f"Failed to detect face in image: {image_path}")
+                miss_count+=1
+X = np.array(X)
+y = np.array(y)
+
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train a SVM classification model
+model = SVC(kernel='linear', probability=True)
+model.fit(X_train, y_train)
+
+# Save the model
+with open('C:/Users/pg_ma/personal_folders/senaha/Unity/script/faceRecognition/faceClassification/svm_model_for_demo.pkl', 'wb') as f:
+    pickle.dump(model, f)
+print(miss_count)
