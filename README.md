@@ -1,14 +1,6 @@
 # VR-surveillance-system-with-face-recognition
 
-<img src="/images/pimax_8k_x.png" alt="HMD" width="150px">
-<img src="/images/360_camera.png" alt="HMD" width="150px">
-
-<img src="https://cdn.worldvectorlogo.com/logos/python-6.svg" alt="python" width="120px">
-<img src="https://www.sqlitetutorial.net/wp-content/uploads/2021/04/sqlite-tutorial-homepage.svg" alt="SQLite" width="120px">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Unity_2021.svg/440px-Unity_2021.svg.png" alt="Unity" width="120px">
-
-
-<img src="/images/VR_concept.png" alt="NrealAir_logo" width="340px">
+<img src="/images/VR_concept.png" alt="VR_concept" width="340px">
 
 ## Requirement
 * Unity 2022
