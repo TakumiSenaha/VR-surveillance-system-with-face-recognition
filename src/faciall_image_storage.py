@@ -11,16 +11,12 @@ import time
 import os
 
 # Define variables
-name = 'Unknown'
+name = 'test_person'
 # Define variables
-video_url = "C:/Users/pg_ma/Videos/senaha.mp4"
+video_url = "video/test.mp4"
 #"rtsp://192.168.11.25:8554"
-train_dir = 'C:/Users/pg_ma/personal_folders/senaha/Unity/script/faceRecognition/train_dir_demo/'
+train_dir = 'train_dir/'
 save_dir = os.path.join(train_dir, name)
-#"C:/Users/pg_ma/Videos/test002.mp4"
-#"C:/Users/pg_ma/Videos/test001.mp4"
-#"C:/Users/pg_ma/Videos/conceptForEval3.mp4"
-#"rtsp://192.168.11.8:8554"
 
 # Initialize InsightFace detector
 insightface_detector = insightface.app.FaceAnalysis()

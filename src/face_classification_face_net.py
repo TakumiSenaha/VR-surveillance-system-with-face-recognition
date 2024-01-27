@@ -28,11 +28,11 @@ SKIP_FRAMES = 15  # Number of frames to skip
 TIME_THRESHOLD = 5.0
 DISTANCE_THRESHOLD = 0.001
 
-csv_file = 'C:/Users/pg_ma/personal_folders/senaha/Unity/script/faceRecognition/csv/face_data.csv'
-db_path = 'C:/Users/pg_ma/personal_folders/senaha/Unity/faceRecgnitionForVR/Assets/database/face_data.db'
+csv_file = 'csv/face_data.csv'
+db_path = '/~/Unity/FaceRecgnitionForVR/Assets/database/face_data.db'
 # "C:/Users/pg_ma/personal_folders/senaha/Unity/faceRecgnitionForVR/Assets/database/face_data.db"
-svm_model_path = 'C:/Users/pg_ma/personal_folders/senaha/Unity/script/faceRecognition/faceClassification/svm_model_for_demo.pkl'
-video_url = "rtsp://192.168.11.12:8554"
+svm_model_path = 'model/svm_model.pkl'
+video_url = "rtsp://192.168.11.1:8554"
 name_list = {}  # Dictionary to record the last seen time for each face
 
 

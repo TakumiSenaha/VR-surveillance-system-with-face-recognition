@@ -7,7 +7,7 @@ from facenet_pytorch import MTCNN, InceptionResnetV1
 import pickle
 
 # Define the directory containing the images
-train_dir = 'C:/Users/pg_ma/personal_folders/senaha/Unity/script/faceRecognition/train_dir_demo/'
+train_dir = '/train_dir/'
 miss_count = 0
 # Initialize the MTCNN module
 mtcnn = MTCNN()
@@ -48,6 +48,6 @@ model = SVC(kernel='linear', probability=True)
 model.fit(X_train, y_train)
 
 # Save the model
-with open('C:/Users/pg_ma/personal_folders/senaha/Unity/script/faceRecognition/faceClassification/svm_model_for_demo.pkl', 'wb') as f:
+with open('model/svm_model.pkl', 'wb') as f:
     pickle.dump(model, f)
 print(miss_count)
