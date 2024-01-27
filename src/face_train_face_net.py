@@ -7,7 +7,7 @@ from facenet_pytorch import MTCNN, InceptionResnetV1
 import pickle
 
 # Define the directory containing the images
-train_dir = '/train_dir/'
+train_dir = 'train_dir/'
 miss_count = 0
 # Initialize the MTCNN module
 mtcnn = MTCNN()
