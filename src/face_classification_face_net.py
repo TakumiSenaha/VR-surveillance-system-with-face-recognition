@@ -32,6 +32,7 @@ csv_file = 'csv/face_data.csv'
 db_path = '/~/Unity/FaceRecgnitionForVR/Assets/database/face_data.db'
 svm_model_path = 'model/svm_model.pkl'
 video_url = "rtsp://192.168.11.1:8554"
+# or for test "video/360-degreees_video_for_test.mp4"
 name_list = {}  # Dictionary to record the last seen time for each face
 
 
