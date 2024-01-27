@@ -1,6 +1,6 @@
 # VR-surveillance-system-with-face-recognition
 
-<img src="/images/VR_concept.png" alt="VR_concept" width="340px">
+<img src="/images/VR_concept_for_github.png" alt="VR_concept" width="340px">
 
 ## Requirement
 * Unity 2022
