@@ -30,7 +30,6 @@ DISTANCE_THRESHOLD = 0.001
 
 csv_file = 'csv/face_data.csv'
 db_path = '/~/Unity/FaceRecgnitionForVR/Assets/database/face_data.db'
-# "C:/Users/pg_ma/personal_folders/senaha/Unity/faceRecgnitionForVR/Assets/database/face_data.db"
 svm_model_path = 'model/svm_model.pkl'
 video_url = "rtsp://192.168.11.1:8554"
 name_list = {}  # Dictionary to record the last seen time for each face
