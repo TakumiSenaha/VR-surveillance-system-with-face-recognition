@@ -62,6 +62,7 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
+!face-recognition-for-VR.unitypackage
 *.app
 
 # Crashlytics generated file
