@@ -68,7 +68,7 @@ With streaming video, frames arriving during face recognition are discarded, so 
 * About saving face images for training.
 
 
-   The [train_dir](/Python/train_dir/) directory structure is shown below, where several face images are stored. (Recognition of as few as 10 photos is possible.)
+   The [train_dir](/Python/train_dir/) directory structure is shown below, where several face images are stored. (Recognition of as few as 1 photo is possible.)
    ```
    <train_dir>/
             <person_1>/
