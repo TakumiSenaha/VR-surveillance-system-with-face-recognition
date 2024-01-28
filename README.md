@@ -3,7 +3,7 @@
 <img src="/images/VR_concept_for_github.png" alt="VR_concept" width="340px">
 
 ## Requirement
-* [Unity 2022.3.3f1](https://unity.com/releases/editor/whats-new/2022.3.3#release-notes))
+* [Unity 2022.3.3f1](https://unity.com/releases/editor/whats-new/2022.3.3#release-notes)
 * [VLC for Unity](https://www.videolan.org/developers/unity.html)
   * If you cannot build, you need to purchase paid assets
 * SQLite
@@ -20,10 +20,23 @@
 4. Set the video URL in MinimalPlayback.cs
    * RTSP streaming : rtsp://192.168.xx.xx:8554
    * Local mp4 file : file:///C:/~
-  
+   * If you define a public variable in MinimalPlayback.cs, you can set the URL in "Inspector".
+  ```cs
+  public string URL;
+      .
+      .
+      .
+  // playing remote media
+  _mediaPlayer.Media = new Media(_libVLC, new Uri(URL));
+      .
+      .
+      .
+  ```
 
 ### Description of each Scene
-
+- **PC**
+  - 360-degree video playback on a PC screen.
+- **HMD_EXP_ASSIST**
 
 ## Face Recognition
 * About saving face images for training.
