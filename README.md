@@ -65,6 +65,15 @@ With streaming video, frames arriving during face recognition are discarded, so 
   </p>
 
 ## Face Recognition
+<details><summary>Face Net</summary>
+Use Google's Face Net for facial recognition.
+
+>S. Florian, K. Dmitry and P. James,
+``Facenet: A unified embedding for face recognition and clustering,''
+2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR),
+vol. 2015, p. 815, June 2015.
+</details>
+
 * About saving face images for training.
 
 
