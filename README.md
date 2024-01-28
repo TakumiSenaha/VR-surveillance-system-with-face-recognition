@@ -3,7 +3,7 @@
 <img src="/images/VR_concept_for_github.png" alt="VR_concept" width="340px">
 
 ## Requirement
-* Unity 2022
+* [Unity 2022.3.3f1](unityhub://2022.3.3f1/7cdc2969a641)
 * [VLC for Unity](https://www.videolan.org/developers/unity.html)
   * If you cannot build, you need to purchase paid assets
 * SQLite
@@ -17,7 +17,10 @@
 1. Create a 3D project
 2. Importing [VLC for Unity](https://www.videolan.org/developers/unity.html) (unitypackage)
 3. Importing [face-recognition-for-VR.unitypackage](/unity/face-recognition-for-VR.unitypackage)
-4. Set the video URL in minimalPlayback.cs
+4. Set the video URL in MinimalPlayback.cs
+   * RTSP streaming : rtsp://192.168.xx.xx:8554
+   * Local mp4 file : file:///C:/~
+  
 
 ### Description of each Scene
 
