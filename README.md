@@ -8,10 +8,27 @@
   * If you cannot build, you need to purchase paid assets
 * SQLite
 
-## Getting Started
+## Getting Started on PC
 ＊The following **Uity Project Setup** must be completed.
+1. After the Unity setup is complete, check that the video plays in the *PC scene*.
+   - For example, you can download [/src/video/360-degreees_video_for_test.mp4](/src/video/360-degreees_video_for_test.mp4) for a video and specify the URL in *MinimalPlayback.cs*, you can play it.
+   - 
+2. Preparation for Face Recognition
+   - Facial recognition results are stored in a database, which Unity refers to for tracking.
+   - The database is located in **"~/Unity project path/Assets/database/face_data.db"**.
+   - Set database path in [face_classification_face_net.py](/src/face_classification_face_net.py) and Include the same video URL as in *MinimalPlayback.cs*
+      ```py
+      db_path = '~/Unity project path/Assets/database/face_data.db'
+      video_url = "[The path you downloaded]/360-degreees_video_for_test.mp4"
+      ```
+      *MinimalPlayback.cs* requires the URL to be entered, so even if the video is locally available, it must be entered as "file:///[The path you downloaded]/360-degreees_video_for_test.mp4".
+
+3. Simultaneously plays the **Scene** in Unity and executes **[face_classification_face_net.py](/src/face_classification_face_net.py)**.
+   - The face recognition results (where the face is located) for the video are transmitted to Unity through the database for face tracking.
 
 
+**When using local video files, even if face recognition takes time to process a frame, the next frame to be processed is set to 15 frames later, which causes a significant delay compared to the video playback in Unity.
+With streaming video, frames arriving during face recognition are discarded, so frames can always be processed at the same time as the playback video. (This still causes a delay, however...).**
 
 ## Uity Project Setup
 1. Create a 3D project
@@ -21,26 +38,31 @@
    * RTSP streaming : rtsp://192.168.xx.xx:8554
    * Local mp4 file : file:///C:/~
    * If you define a public variable in MinimalPlayback.cs, you can set the URL in "Inspector".
-  ```cs
-  public string URL;
-      .
-      .
-      .
-  // playing remote media
-  _mediaPlayer.Media = new Media(_libVLC, new Uri(URL));
-      .
-      .
-      .
-  ```
+    ```cs
+    public string URL;
+        .
+        .
+        .
+    // playing remote media
+    _mediaPlayer.Media = new Media(_libVLC, new Uri(URL));
+        .
+        .
+        .
+    ```
 
 ### Description of each Scene
 - **PC**
   - 360-degree video playback on a PC screen. Set up as follows.(Inspector of Sphere100)
+<p align="center">
+<img src="/images/Scene_PC_inspector.png" alt="Scene_PC_inspector" width="400px">
+</p>
 
-<img src="/images/Scene_PC_inspector.png" alt="Scene_PC_inspector" width="200px">
 
 - **HMD_EXP_ASSIST**
-  - For viewing 360-degree videos on a head-mounted display. As in the **PC scene**, scripts are attached to the Sphere100, but the scripts to be kept active are the same as in the **PC scene**.
+  - For viewing 360-degree videos on a head-mounted display. As in the **PC scene**, scripts are attached to the Sphere100, but the scripts to be kept active are the same as in the **PC scene**. 
+  <p align="center">
+  *** Note that different scripts are checked by default ***
+  </p>
 
 ## Face Recognition
 * About saving face images for training.
@@ -85,6 +107,8 @@
   ```
 * Preconfiguration must be in a CSV file.
   [face_data.csv](/src/csv/face_data.csv)
-ID,name,flag,x,y,z,profile
-1,Lab_Member_1,0,0.0,0.0,0.0,He is Lab member.
-2,Lab_Member_2,0,0.0,0.0,0.0,He is Lab member.
+  ```
+  ID,name,flag,x,y,z,profile
+  1,Lab_Member_1,0,0.0,0.0,0.0,He is Lab member.
+  2,Lab_Member_2,0,0.0,0.0,0.0,He is Lab member.
+  ```
