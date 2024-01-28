@@ -35,8 +35,12 @@
 
 ### Description of each Scene
 - **PC**
-  - 360-degree video playback on a PC screen.
+  - 360-degree video playback on a PC screen. Set up as follows.(Inspector of Sphere100)
+
+<img src="/images/Scene_PC_inspector.png" alt="Scene_PC_inspector" width="200px">
+
 - **HMD_EXP_ASSIST**
+  - For viewing 360-degree videos on a head-mounted display. As in the **PC scene**, scripts are attached to the Sphere100, but the scripts to be kept active are the same as in the **PC scene**.
 
 ## Face Recognition
 * About saving face images for training.
