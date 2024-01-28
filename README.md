@@ -6,14 +6,14 @@
 * [Unity 2022.3.3f1](https://unity.com/releases/editor/whats-new/2022.3.3#release-notes)
 * [VLC for Unity](https://www.videolan.org/developers/unity.html)
   * If you cannot build, you need to purchase paid assets
-* SQLite
+* [SQLite](https://www.sqlite.org/index.html)
 
 ## Getting Started on PC
 ＊The following **Uity Project Setup** must be completed.
 1. After the Unity setup is complete, check that the video plays in the *PC scene*.
    - For example, you can download [/src/video/360-degreees_video_for_test.mp4](/src/video/360-degreees_video_for_test.mp4) for a video and specify the URL in *MinimalPlayback.cs*, you can play it.
-   - 
-2. Preparation for Face Recognition
+  
+2. Preparation for Face Recognition (A detailed description is [below](#face-recognitionFace Recognition))
    - Facial recognition results are stored in a database, which Unity refers to for tracking.
    - The database is located in **"~/Unity project path/Assets/database/face_data.db"**.
    - Set database path in [face_classification_face_net.py](/src/face_classification_face_net.py) and Include the same video URL as in *MinimalPlayback.cs*
