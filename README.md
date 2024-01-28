@@ -3,7 +3,7 @@
 <img src="/images/VR_concept_for_github.png" alt="VR_concept" width="340px">
 
 ## Requirement
-* [Unity 2022.3.3f1](unityhub://2022.3.3f1/7cdc2969a641)
+* [Unity 2022.3.3f1](https://unity.com/releases/editor/whats-new/2022.3.3#release-notes))
 * [VLC for Unity](https://www.videolan.org/developers/unity.html)
   * If you cannot build, you need to purchase paid assets
 * SQLite
